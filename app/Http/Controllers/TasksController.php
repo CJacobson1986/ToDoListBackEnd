@@ -35,6 +35,7 @@ class TasksController extends Controller
 
       return Response::json(['task' => $task]);
     }
+
     public function show($id)
     {
       $task = Task::find($id);
