@@ -15,6 +15,17 @@ class TasksController extends Controller
       $tasks = Task::all();
       return Response::json(['tasks' => $tasks]);
     }
+
+    public function delete()
+    {
+      $tasks=Task::all();
+      foreach ($tasks as $task) {
+        $task->delete();
+      }
+      return Response::json(['Success' => 'List Items Deleted from Database' ]);
+
+    }
+
     public function store(Request $request)
     {
       $rules = [
